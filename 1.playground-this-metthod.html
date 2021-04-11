@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <title>Title</title>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+   <div class="playground-area">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-4">
+               <div class="form-group">
+                  <label for=""></label>
+                  <input type="text" name="" id="" class="form-control  search" placeholder=""
+                     aria-describedby="helpId">
+                  <p class="result text-danger"></p>
+                  <p class="thanks text-success"></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+
+
+
+
+   <!-- Optional JavaScript -->
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+   </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+   </script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+   </script>
+
+   <script>
+      const serchInput = document.querySelector(".search");
+      const result = document.querySelector(".result");
+      const thanks = document.querySelector(".thanks");
+
+      function show() {
+          result.innerHTML = this.value;
+         //  solve proble 
+          let self = this 
+          setTimeout(function(){
+             thanks.innerHTML = `You have typed :   ${self.value}`;
+          },100)
+      }
+
+      /* 
+      serchInput.addEventListener("keyup",show); 
+
+      */
+
+
+      // otherwise es6  function solve thbis  problem 
+      function show2() {
+          result.innerHTML = this.value;
+          setTimeout(()=>{
+             thanks.innerHTML = `You have typed :   ${this.value}`;
+          },1000)
+      }
+      serchInput.addEventListener("keyup",show2);       
+   </script>
+</body>
+
+</html>
